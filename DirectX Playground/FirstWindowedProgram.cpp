@@ -44,13 +44,21 @@ FirstWindowedProgram::FirstWindowedProgram(
 	RegisterClassEx(&wc);
 
 	///
+	/// refer "AdjustWindowRect function"
+	/// https://msdn.microsoft.com/en-us/library/windows/desktop/ms632665(v=vs.85).aspx
+	///
+	RECT wr = { 0, 0, 800, 600 };
+	AdjustWindowRect(&wr, WS_OVERLAPPEDWINDOW, FALSE);
+
+	///
 	/// refer "CreateWindowEx function"
 	/// https://msdn.microsoft.com/en-us/library/windows/desktop/ms632680(v=vs.85).aspx
 	///
 	// create the window n use the result as the handle
 	hWnd = CreateWindowEx(NULL, L"WindowClass1", L"Our First Windowed Program!",
 		WS_OVERLAPPEDWINDOW, 300, 300,
-		800, 600, NULL, NULL, hInstance, NULL);
+		wr.right - wr.left, wr.bottom - wr.top, 
+		NULL, NULL, hInstance, NULL);
 }
 
 
