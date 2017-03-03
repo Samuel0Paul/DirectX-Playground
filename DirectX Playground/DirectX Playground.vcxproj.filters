@@ -21,9 +21,15 @@
     <ClCompile Include="FirstWindowedProgram.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="RealTimeWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FirstWindowedProgram.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RealTimeWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
