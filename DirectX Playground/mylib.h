@@ -12,3 +12,6 @@
 
 void initD3D(HWND hWnd);
 void cleanD3D(void);
+
+//! func to render a single frame
+void RenderFrame(void);

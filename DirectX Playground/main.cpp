@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 #include <Windows.h>
 #include <windowsx.h>
@@ -13,38 +14,64 @@
 #include "FirstWindowedProgram.h"
 #include "RealTimeWindow.h"
 #include "WindowWithD3DCOM.h"
+#include "RenderingFrames.h"
+
+const int runOption = 4;
 
 int WINAPI WinMain(
-	HINSTANCE hInstance,
-	HINSTANCE hPrevInstance,
-	LPSTR lpCmdLine,
-	int nCmdShow
+    HINSTANCE hInstance,
+    HINSTANCE hPrevInstance,
+    LPSTR lpCmdLine,
+    int nCmdShow
 )
 {
-	///
-	/// refer "MessageBox function"
-	/// https://msdn.microsoft.com/en-us/library/windows/desktop/ms645505(v=vs.85).aspx
-	///
-	MessageBox(NULL,				// window hndl
-		L"Hello!",					// text
-		L"Just another hello window",		// caption (on the window title)
-		MB_ICONEXCLAMATION | MB_OK	// type of MB
-	);
+    ///
+    /// refer "MessageBox function"
+    /// https://msdn.microsoft.com/en-us/library/windows/desktop/ms645505(v=vs.85).aspx
+    ///
+    MessageBox(NULL,
+        (L"Hello! running with runOption: \"" + std::to_wstring(runOption) + L"\"").c_str(),
+        L"Just another hello window",
+        MB_ICONEXCLAMATION | MB_OK
+    );
 
-	FirstWindowedProgram firstWindowedApp(
-		hInstance, hPrevInstance,
-		lpCmdLine, nCmdShow);
-	int result = firstWindowedApp.run();
+    int result;
+    switch (runOption)
+    {
+    case 1: {
+        FirstWindowedProgram firstWindowedApp(
+            hInstance, hPrevInstance,
+            lpCmdLine, nCmdShow);
+        result = firstWindowedApp.run();
+        break;
+    }
+    case 2: {
+        RealTimeWindow realtimeWindowApp(
+            hInstance, hPrevInstance,
+            lpCmdLine, nCmdShow);
+        result = realtimeWindowApp.run();
+        break;
+    }
+    case 3: {
+        WindowWithD3DCOM d3dwindowApp(
+            hInstance, hPrevInstance,
+            lpCmdLine, nCmdShow);
+        result = d3dwindowApp.run();
+        break;
+    }
+    case 4: {
+        RenderingFrames renderingFramesApp(
+            hInstance, hPrevInstance,
+            lpCmdLine, nCmdShow);
+        result = renderingFramesApp.run();
+        break;
+    }
+    case 5: {
+        break;
+    }
+    default:
+        break;
+    }
 
-	RealTimeWindow realtimeWindowApp(
-		hInstance, hPrevInstance,
-		lpCmdLine, nCmdShow);
-	result = realtimeWindowApp.run();
-
-	WindowWithD3DCOM d3dwindowApp(
-		hInstance, hPrevInstance,
-		lpCmdLine, nCmdShow);
-	result = d3dwindowApp.run();
-
-	return result;
+    return result;
 }
