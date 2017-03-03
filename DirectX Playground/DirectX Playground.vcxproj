@@ -128,11 +128,15 @@
   <ItemGroup>
     <ClCompile Include="FirstWindowedProgram.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="mylib.cpp" />
     <ClCompile Include="RealTimeWindow.cpp" />
+    <ClCompile Include="WindowWithD3DCOM.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FirstWindowedProgram.h" />
+    <ClInclude Include="mylib.h" />
     <ClInclude Include="RealTimeWindow.h" />
+    <ClInclude Include="WindowWithD3DCOM.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

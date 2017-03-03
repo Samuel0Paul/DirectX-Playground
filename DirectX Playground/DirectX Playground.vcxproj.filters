@@ -24,12 +24,24 @@
     <ClCompile Include="RealTimeWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="WindowWithD3DCOM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mylib.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FirstWindowedProgram.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RealTimeWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowWithD3DCOM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mylib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
