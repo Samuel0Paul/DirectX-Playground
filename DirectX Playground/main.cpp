@@ -15,8 +15,9 @@
 #include "RealTimeWindow.h"
 #include "WindowWithD3DCOM.h"
 #include "RenderingFrames.h"
+#include "FullScreenD3DWindow.h"
 
-const int runOption = 4;
+const int runOption = 5;
 
 int WINAPI WinMain(
     HINSTANCE hInstance,
@@ -35,7 +36,7 @@ int WINAPI WinMain(
         MB_ICONEXCLAMATION | MB_OK
     );
 
-    int result;
+    int result{ 0 };
     switch (runOption)
     {
     case 1: {
@@ -67,6 +68,10 @@ int WINAPI WinMain(
         break;
     }
     case 5: {
+        FullScreenD3DWindow fullscreenApp(
+            hInstance, hPrevInstance,
+            lpCmdLine, nCmdShow);
+        result = fullscreenApp.run();
         break;
     }
     default:

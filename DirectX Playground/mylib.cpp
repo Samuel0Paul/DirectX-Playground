@@ -1,7 +1,7 @@
 #include "mylib.h"
 
-const int SCREEN_WIDTH = 800;
-const int SCREEN_HEIGHT = 600;
+extern const int SCREEN_WIDTH = 800;
+extern const int SCREEN_HEIGHT = 600;
 
 IDXGISwapChain *swapchain;
 ID3D11Device *device;
@@ -16,10 +16,13 @@ void initD3D(HWND hWnd)
 	ZeroMemory(&scd, sizeof(DXGI_SWAP_CHAIN_DESC));
 	scd.BufferCount = 1;								// 1 back buffer
 	scd.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;	// use a 32 bit color (8 + 8 + 8 + 8)???
+    scd.BufferDesc.Width = SCREEN_WIDTH;                // set the back-buffer width
+    scd.BufferDesc.Height = SCREEN_HEIGHT;              // """ height
 	scd.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;	// how swap chain is to be used
 	scd.OutputWindow = hWnd;
 	scd.SampleDesc.Count = 4;							// how many multisamples
 	scd.Windowed = TRUE;
+    scd.Flags = DXGI_SWAP_CHAIN_FLAG_ALLOW_MODE_SWITCH; // allow full-screen switching
 
 	///
 	/// refer "D3D11CreateDeviceAndSwapChain function"
@@ -103,6 +106,9 @@ void initD3D(HWND hWnd)
 // clean up D3D and COM
 void cleanD3D(void)
 {
+    swapchain->SetFullscreenState(FALSE, NULL); // switch to windowed mode
+
+    // close and release exisiting COM objs
 	swapchain->Release();
     backbuffer->Release();
 	device->Release();

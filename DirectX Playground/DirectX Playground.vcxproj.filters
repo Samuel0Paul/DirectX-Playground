@@ -33,6 +33,9 @@
     <ClCompile Include="RenderingFrames.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FullScreenD3DWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FirstWindowedProgram.h">
@@ -48,6 +51,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RenderingFrames.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FullScreenD3DWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
