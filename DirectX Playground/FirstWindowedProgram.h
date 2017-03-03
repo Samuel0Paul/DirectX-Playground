@@ -47,7 +47,7 @@ private:
 	/// concept "Window Procedures"
 	/// https://msdn.microsoft.com/en-us/library/windows/desktop/ms632593(v=vs.85).aspx
 	///
-	friend LRESULT CALLBACK WindowProc(
+	friend LRESULT CALLBACK FirstWindowedProgramWindowProc(
 		HWND hWnd,
 		UINT message,
 		WPARAM wParam,
