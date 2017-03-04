@@ -36,6 +36,9 @@
     <ClCompile Include="FullScreenD3DWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DrawATriangleFam.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FirstWindowedProgram.h">
@@ -56,5 +59,21 @@
     <ClInclude Include="FullScreenD3DWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DrawATriangleFam.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DirectX 11 basics.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders.shader">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

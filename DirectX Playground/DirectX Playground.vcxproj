@@ -126,6 +126,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DrawATriangleFam.cpp" />
     <ClCompile Include="FirstWindowedProgram.cpp" />
     <ClCompile Include="FullScreenD3DWindow.cpp" />
     <ClCompile Include="main.cpp" />
@@ -135,12 +136,20 @@
     <ClCompile Include="WindowWithD3DCOM.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DrawATriangleFam.h" />
     <ClInclude Include="FirstWindowedProgram.h" />
     <ClInclude Include="FullScreenD3DWindow.h" />
     <ClInclude Include="mylib.h" />
     <ClInclude Include="RealTimeWindow.h" />
     <ClInclude Include="RenderingFrames.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="WindowWithD3DCOM.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DirectX 11 basics.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders.shader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

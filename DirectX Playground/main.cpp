@@ -16,8 +16,9 @@
 #include "WindowWithD3DCOM.h"
 #include "RenderingFrames.h"
 #include "FullScreenD3DWindow.h"
+#include "DrawATriangleFam.h"
 
-const int runOption = 5;
+const int runOption = 6;
 
 int WINAPI WinMain(
     HINSTANCE hInstance,
@@ -72,6 +73,13 @@ int WINAPI WinMain(
             hInstance, hPrevInstance,
             lpCmdLine, nCmdShow);
         result = fullscreenApp.run();
+        break;
+    }
+    case 6: {
+        DrawATriangleFam triangleDrawingApp(
+            hInstance, hPrevInstance,
+            lpCmdLine, nCmdShow);
+        result = triangleDrawingApp.run();
         break;
     }
     default:
